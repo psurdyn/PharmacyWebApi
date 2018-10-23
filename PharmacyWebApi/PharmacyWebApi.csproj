@@ -185,6 +185,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MedicinesController.cs" />
+    <Compile Include="Controllers\PharmaciesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,9 +194,14 @@
     <Compile Include="Migrations\201810231048238_AddedMedicineAndPharmacyModel.Designer.cs">
       <DependentUpon>201810231048238_AddedMedicineAndPharmacyModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810231148045_AddedLogTable.cs" />
+    <Compile Include="Migrations\201810231148045_AddedLogTable.Designer.cs">
+      <DependentUpon>201810231148045_AddedLogTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Medicine.cs" />
     <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\MyLog.cs" />
     <Compile Include="Models\Pharmacy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -270,6 +276,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810231048238_AddedMedicineAndPharmacyModel.resx">
       <DependentUpon>201810231048238_AddedMedicineAndPharmacyModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810231148045_AddedLogTable.resx">
+      <DependentUpon>201810231148045_AddedLogTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

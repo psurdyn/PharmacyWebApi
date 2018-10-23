@@ -10,6 +10,7 @@ namespace PharmacyWebApi.Models
     {
         public DbSet<Pharmacy> Pharmacies { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
+        public DbSet<MyLog> Logs { get; set; }
 
         public MyDbContext() : base("DefaultConnection")
         {

@@ -1,6 +1,7 @@
 ﻿using PharmacyWebApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,10 +31,26 @@ namespace PharmacyWebApi.Controllers
         [Route("medicines/add")]
         public IHttpActionResult Add(Medicine medicine)
         {
-            _context.Medicines.Add(medicine);
-            _context.SaveChanges();
+            try
+            {
+                _context.Medicines.Add(medicine);
+                _context.SaveChanges();
 
-            return Ok();
+                return Ok();
+            }
+            catch (DbEntityValidationException e)
+            {
+                MyLog log = new MyLog()
+                {
+                    Log = e.StackTrace
+                };
+
+                _context.Logs.Add(log);
+                _context.SaveChanges();
+
+                return BadRequest();
+            }
+            
         }
 
 
